@@ -1,0 +1,11 @@
+<h1>Welcome to Rewsly</h1>
+
+<h2>Read today's top stories</h2>
+
+<ul>
+<% @stories.each do |story| %>
+  <li>
+    <%= link_to story.headline, story_path(story) %>
+  </li>
+<% end %>
+</ul>

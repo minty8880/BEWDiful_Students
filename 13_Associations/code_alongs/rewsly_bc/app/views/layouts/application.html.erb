@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rewsly</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class='container'>
+    <div class='navbar'>
+      <%= link_to 'Rewsly', root_path, :class => 'navbar-brand' %>
+      <ul class='nav navbar-nav'>
+        <% if current_user %>
+          <li>
+            <%= link_to 'New story', new_story_path, :class => 'navbar-link' %>
+          </li>
+        <% end %>
+      </ul>
+      <p class='navbar-text pull-right'>
+        <% if current_user %>
+          <%= link_to 'Sign out', destroy_user_session_path, :method => 'delete' %>
+        <% else %>
+          <%= link_to 'Sign in', new_user_session_path %>
+        <% end %>
+      </p>
+    </div>
+
+    <%= yield %>
+  </div>
+
+</body>
+</html>
