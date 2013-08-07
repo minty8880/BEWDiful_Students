@@ -5,3 +5,13 @@
 <p>
   <%= @story.content %>
 </p>
+
+<em>Author: <%= @story.user %></em>
+
+<ul>
+	<% @story.comments.each do |comment| %>
+		<li><%= comment.content %></li>
+	<% end %>
+</ul>
+
+<%= link_to 'Add a comment', new_story_comment_path(@story) %>

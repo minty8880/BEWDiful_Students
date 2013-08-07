@@ -47,3 +47,7 @@ CONTENT
 STORIES.each do |story|
   Story.create(story)
 end
+
+# Seed a devise user
+
+User.create(:email => 'admin@rews.ly', :password => 'topsecret123', :password_confirmation => 'topsecret123')
