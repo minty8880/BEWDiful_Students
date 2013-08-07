@@ -1,0 +1,15 @@
+%h1 Add a URL!
+
+-if @url.errors.any?
+  %div.alert-box.alert
+    These errors prevented URL from saving:
+    %ul
+    -@url.errors.full_messages.each do |message|
+      %li= message
+
+
+= form_for @url do |url|
+  = url.label :link
+  = url.text_field :link
+  = url.submit class: "small button"
+  = link_to "Cancel", root_path

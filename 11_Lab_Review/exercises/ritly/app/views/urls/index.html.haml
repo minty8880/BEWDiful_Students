@@ -1,0 +1,18 @@
+%h1 Welcome to the Ritly URL converter 
+
+=link_to 'Add a URL to convert', new_url_path
+
+%h6 Linked URLs
+
+%table
+  %tr
+    %th Your URL
+    %th Converted URL
+    %th Preview page
+    %th
+  -@urls.each do |url|
+    %tr
+      %td=url.link
+      %td=link_to url.converted_url,url.converted_url
+      %td=link_to "#{preview_url(url.hash_code)}","#{preview_url(url.hash_code)}"
+      %td= link_to "Delete", url,  method: :delete, confirm: "Are you sure you want to delete URL redirector for #{url.link}?"

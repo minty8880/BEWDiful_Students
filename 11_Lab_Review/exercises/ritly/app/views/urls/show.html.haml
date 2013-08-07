@@ -1,0 +1,6 @@
+%h1 Done!
+%p= "Your URL: #{@url.link}"
+%p= "Ritly URL: #{root_url}#{@url.hash_code}"
+%p=link_to 'Go to your new URL!', redirector_path(@url.hash_code)
+%p=link_to 'Go to your URL preview page', preview_path(@url.hash_code)
+%p=link_to 'Home', root_path

@@ -1,0 +1,70 @@
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateShirts (20130722091120)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "shirts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "image" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20130722091120"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM schema_migrations[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.2ms)[0m  [1mDROP TABLE "shirts"[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20130722091120'
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM schema_migrations[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateShirts (20130722091120)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "shirts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "image" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20130722091120"]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (9.6ms)[0m  INSERT INTO "shirts" ("created_at", "description", "name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Mon, 22 Jul 2013 09:31:02 UTC +00:00], ["description", "A beautiful green shirt with Puff The Magic Dragon on the back"], ["name", "Dragon Magic"], ["updated_at", Mon, 22 Jul 2013 09:31:02 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "shirts" SET "name" = ?, "updated_at" = ? WHERE "shirts"."id" = 1[0m  [["name", "Normal Dragon"], ["updated_at", Mon, 22 Jul 2013 09:34:11 UTC +00:00]]
+  [1m[35m (7.3ms)[0m  commit transaction
+  [1m[36mShirt Load (0.2ms)[0m  [1mSELECT "shirts".* FROM "shirts" WHERE "shirts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mShirt Load (0.2ms)[0m  SELECT "shirts".* FROM "shirts"
+  [1m[36mShirt Load (0.2ms)[0m  [1mSELECT "shirts".* FROM "shirts" ORDER BY "shirts"."id" ASC LIMIT 1[0m
+  [1m[35mShirt Load (0.2ms)[0m  SELECT "shirts".* FROM "shirts"
+  [1m[36mShirt Load (0.2ms)[0m  [1mSELECT "shirts".* FROM "shirts"[0m
+  [1m[35mShirt Load (0.2ms)[0m  SELECT "shirts".* FROM "shirts"
+  [1m[36mShirt Load (0.2ms)[0m  [1mSELECT "shirts".* FROM "shirts"[0m
+  [1m[35mShirt Load (0.2ms)[0m  SELECT "shirts".* FROM "shirts" WHERE "shirts"."name" = 'Dragon'
+  [1m[36mShirt Load (0.2ms)[0m  [1mSELECT "shirts".* FROM "shirts" WHERE "shirts"."name" = 'Dragon'[0m
+  [1m[35mShirt Load (0.2ms)[0m  SELECT "shirts".* FROM "shirts"
+  [1m[36mShirt Load (0.2ms)[0m  [1mSELECT "shirts".* FROM "shirts" WHERE "shirts"."name" = 'Dragon'[0m
+  [1m[35mShirt Load (0.2ms)[0m  SELECT "shirts".* FROM "shirts" WHERE "shirts"."name" = 'Normal Dragon'
+  [1m[36mShirt Load (0.2ms)[0m  [1mSELECT "shirts".* FROM "shirts" WHERE "shirts"."name" = '%Dragon%'[0m
+  [1m[35mShirt Load (0.2ms)[0m  SELECT "shirts".* FROM "shirts" ORDER BY "shirts".id ASC
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "shirts" ("created_at", "description", "name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Mon, 22 Jul 2013 09:46:11 UTC +00:00], ["description", "All the cool Swedish rockers from the 70s"], ["name", "Silver Rockers"], ["updated_at", Mon, 22 Jul 2013 09:46:11 UTC +00:00]]
+  [1m[36m (7.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mShirt Load (0.2ms)[0m  SELECT "shirts".* FROM "shirts"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mShirt Load (0.2ms)[0m  [1mSELECT "shirts".* FROM "shirts"[0m
+  [1m[35mShirt Load (0.1ms)[0m  SELECT "shirts".* FROM "shirts" WHERE "shirts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShirt Load (0.2ms)[0m  [1mSELECT "shirts".* FROM "shirts" WHERE (name like %dragon%)[0m
+SQLite3::SQLException: near "%": syntax error: SELECT "shirts".* FROM "shirts"  WHERE (name like %dragon%)
+  [1m[35mShirt Load (0.1ms)[0m  SELECT "shirts".* FROM "shirts" WHERE (name like %dragon)
+SQLite3::SQLException: near "%": syntax error: SELECT "shirts".* FROM "shirts"  WHERE (name like %dragon)
+  [1m[36mShirt Load (0.1ms)[0m  [1mSELECT "shirts".* FROM "shirts"[0m
+  [1m[35mShirt Load (0.2ms)[0m  SELECT "shirts".* FROM "shirts" WHERE (name like 'Dragon')
+  [1m[36mShirt Load (0.2ms)[0m  [1mSELECT "shirts".* FROM "shirts" WHERE (name like 'Silver')[0m
+  [1m[35mShirt Load (0.1ms)[0m  SELECT "shirts".* FROM "shirts" WHERE (name like %Silver%)
+SQLite3::SQLException: near "%": syntax error: SELECT "shirts".* FROM "shirts"  WHERE (name like %Silver%)
+  [1m[36mShirt Load (0.2ms)[0m  [1mSELECT "shirts".* FROM "shirts" WHERE (name like '%Silver%')[0m
+  [1m[35mShirt Load (0.1ms)[0m  SELECT "shirts".* FROM "shirts" WHERE (name like ''Silver'')
+SQLite3::SQLException: near "Silver": syntax error: SELECT "shirts".* FROM "shirts"  WHERE (name like ''Silver'')
+  [1m[36mShirt Load (0.2ms)[0m  [1mSELECT "shirts".* FROM "shirts" WHERE (name like 'Silver')[0m
+  [1m[35mShirt Load (0.2ms)[0m  SELECT "shirts".* FROM "shirts" WHERE (name like 'Silver')
+  [1m[36mShirt Load (0.1ms)[0m  [1mSELECT "shirts".* FROM "shirts" WHERE (name like %'Silver'%)[0m
+SQLite3::SQLException: near "%": syntax error: SELECT "shirts".* FROM "shirts"  WHERE (name like %'Silver'%)
+  [1m[35mShirt Load (0.2ms)[0m  SELECT "shirts".* FROM "shirts" WHERE (name like 'Silver')
+  [1m[36mShirt Load (0.2ms)[0m  [1mSELECT "shirts".* FROM "shirts" WHERE (name like '%Silver%')[0m

@@ -1,0 +1,15 @@
+%h1 Redirect Preview
+
+%div
+  -if @message
+    = @message
+  -else
+    %div Your new link is:
+    = link_to "#{root_url}#{@url.hash_code}", @url.converted_url
+    %div Which goes to:
+    = link_to @url.link, @url.link
+    %div
+      -#%iframe{src: @url.link, width: "100%", height: "500px"}
+      %iframe(src="#{@url.link}" width="100%" height="500px")
+
+=link_to 'Home', root_path
